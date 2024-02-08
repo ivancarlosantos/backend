@@ -40,6 +40,11 @@ $ docker-compose up -d
 ```
 
 Com a base de dados ativa, inicializar o projeto
+- Baixar dependências:
+```
+$ npm install
+```
+
 - Executar a aplicação:
 ```
 $ npm start
