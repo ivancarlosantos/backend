@@ -1,14 +1,13 @@
-/* database conection */
 import mysql from "mysql";
 
-export const db = mysql.createConnection({
+export const db = mysql.createPool({
     host: "localhost",
     user: "root",
     password: "password",
     database: "pets_db"
 });
 
-connection.connect((err)=>{
+db.connect((err)=>{
     if (err) throw err;
-    console.log("Connected to database")
-  });
+    console.log("Connected to database");
+});
