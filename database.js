@@ -7,3 +7,8 @@ export const db = mysql.createConnection({
     password: "password",
     database: "pets_db"
 });
+
+connection.connect((err)=>{
+    if (err) throw err;
+    console.log("Connected to database")
+  });
