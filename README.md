@@ -50,9 +50,53 @@ $ npm install
 $ npm start
 ```
 
-A API poderá ser acessada em [http://localhost:5000](http://localhost:5000).
+
+Caso haja problema de conexão com o Banco de Dados no Docker,
+realize o seguinte procedimento:
+- Abra um terminal e execute os comando abaixo:
+```
+$ docker exec -it pets_db /bin/bash
+```
+- execute o comando para entrar no mysql
+```
+$ mysql -uroot -p
+```
+- Coloque a senha password
+```
+enter password: password
+```
+Abrirá o terminal do mysql
+```
+mysql>
+```
+Agora execute os comando abaixo
+
+```
+mysql> ALTER USER 'root' IDENTIFIED WITH mysql_native_password BY 'password';
+```
+ - Atualize os privilégios de usuário
+```
+mysql> flush privileges;
+```
+ - Selecione a base de dados
+```
+mysql> use pets_db;
+```
+Crie a tabela para persistência
+```
+mysql> CREATE TABLE pets(
+id integer primary key auto_increment,
+nome varchar(255) not null,
+idade integer not null,
+especie varchar(255) not null,
+raca varchar (30) not null,
+adotado varchar(3) not null,
+data_adocao date);
+```
 
 ## API Endpoints
+
+A API poderá ser acessada em [http://localhost:5000](http://localhost:5000).
 
 Para fazer as requisições HTTP abaixo, foi utilizada a ferramenta [Postman](https://www.postman.com/):
 
