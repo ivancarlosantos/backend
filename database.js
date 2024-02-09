@@ -7,9 +7,4 @@ export const db = mysql.createPool({
     database: "pets_db"
 });
 
-db.connect((err)=>{
-    if (err) throw err;
-    console.log("Connected to database");
-});
-
 export default db
