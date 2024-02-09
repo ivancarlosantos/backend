@@ -3,7 +3,7 @@ version: '3.8'
 services:
   db:
     container_name: pets_db
-    image: mysql:8
+    image: mysql:8.3
     environment:
       MYSQL_ROOT_PASSWORD: password
       MYSQL_DATABASE: pets_db
